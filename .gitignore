@@ -1,3 +1,4 @@
+*.tar.gz
 \.svn$
 \.tar\.gz$
 \.tgz$
