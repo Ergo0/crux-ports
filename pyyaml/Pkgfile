@@ -10,7 +10,7 @@
 # Category:	python, yaml
 
 name=pyyaml
-version=3.13
+version=5.1.1
 release=1
 source=(http://pyyaml.org/download/pyyaml/PyYAML-$version.tar.gz)
 
