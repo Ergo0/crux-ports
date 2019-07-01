@@ -1,0 +1,17 @@
+# Description: A collection of freely re-usable Autoconf macros
+# URL: https://www.gnu.org/software/autoconf-archive/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on:
+
+name=autoconf-archive
+version=2019.01.06
+release=1
+source=(https://ftpmirror.gnu.org/$name/$name-$version.tar.xz)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}
+
