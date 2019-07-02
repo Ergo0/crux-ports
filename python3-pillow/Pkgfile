@@ -1,0 +1,19 @@
+cription: Python Imaging Library (PIL) fork. Python3 version.
+# URL: https://python-pillow.github.io/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: python3
+
+name=python3-pillow
+version=6.0.0
+release=1
+source=(https://files.pythonhosted.org/packages/source/P/Pillow/Pillow-$version.tar.gz)
+
+build() {
+  cd Pillow-$version
+  python3 setup.py build
+  python3 setup.py install \
+    --skip-build \
+    --root=$PKG \
+    --optimize=1
+}
+<Paste>

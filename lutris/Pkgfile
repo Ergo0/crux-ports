@@ -1,7 +1,7 @@
 # Description: Open Gaming platform for Linux 
 # URL: https://lutris.net/
 # Maintainer: Ergo
-# Depends on: python3-gobject pyyaml gtk3 cabextract unrar unzip p7zip curl python3-setuptools psmisc 
+# Depends on: python3-gobject py3yaml gtk3 cabextract unrar unzip p7zip curl python3-setuptools psmisc xterm gdk-pixbuf-32 python3 xorg-font-msttcorefonts desktop-file-utils hicolor-icon-theme polkit gtk python3-pip python3-setuptools  sqlite3-32 python3-evdev  webkitgtk gnome-desktop python3-pillow 
 
 name=lutris
 version=0.5.2
@@ -14,7 +14,7 @@ build() {
 	/usr/bin/python3 setup.py build
 
 	/usr/bin/python3 setup.py install \
-		--prefix=/usr --root=$PKG --optimize=1
+		--prefix=/usr --root=$PKG --optimize=1 --skip-build
 	}	
 
 
