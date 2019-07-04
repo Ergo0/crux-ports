@@ -1,22 +1,20 @@
 # Description: All your games in one place (Steam, GoG, Humble, etc)
 # URL: https://tkashkin.tk/projects/gamehub/
-# Maintainer: Tim Biermann, tbier at posteo dot de
+# Maintainer: Ergo. nathaniel dot horn at protonmail dot com
 # Depends on: enchant graphite2 json-glib keyutils krb5 libgee libmanette libnotify openjpeg2 polkit webkitgtk
 
 name=gamehub
-version2=2-master
-version=0.14.1-$version2
+version=git
 release=1
-source=(https://github.com/tkashkin/GameHub/archive/${version}/$name-$version.tar.gz)
-
+source=()
 build() {
-  cd GameHub-$version
-  CFLAGS="$CFLAGS -O0" meson build . \
-    --prefix=/usr
+  git clone https://github.com/tkashkin/GameHub.git
+  cd GameHub
+  git checkout dev
+  meson build --prefix=/usr --buildtype=debug
   ninja -C build
   DESTDIR=$PKG ninja -C build install
   cd $PKG/usr/bin
   ln -s com.github.tkashkin.gamehub gamehub
 }
-
 

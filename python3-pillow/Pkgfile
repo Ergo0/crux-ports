@@ -1,4 +1,4 @@
-cription: Python Imaging Library (PIL) fork. Python3 version.
+#description: Python Imaging Library (PIL) fork. Python3 version.
 # URL: https://python-pillow.github.io/
 # Maintainer: Tim Biermann, tbier at posteo dot de
 # Depends on: python3
@@ -16,4 +16,4 @@ build() {
     --root=$PKG \
     --optimize=1
 }
-<Paste>
+

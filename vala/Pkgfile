@@ -1,0 +1,17 @@
+# Description: self-hosting compiler that translates Vala source code into C
+# URL:         http://live.gnome.org/Vala
+# Maintainer:  Thomas Penteker, tek at serverop dot de
+# Depends on:  glib
+
+name=vala
+version=0.45.2
+release=1
+source=(http://download.gnome.org/sources/vala/${version%.*}/vala-$version.tar.xz)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr \
+              --mandir=/usr/man 
+  make
+  make install DESTDIR=$PKG
+}
